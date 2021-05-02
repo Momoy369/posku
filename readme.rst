@@ -1,4 +1,10 @@
 ###################
+About PosKu
+###################
+
+PosKu is a sales application that is useful for recording sales, sales of goods, viewing sales statistics and others. PosKu is made in the PHP language, Codeigniter Framework version 3, and the AdminLTE template (https://adminlte.io/docs/3.1/).
+
+###################
 What is CodeIgniter
 ###################
 
