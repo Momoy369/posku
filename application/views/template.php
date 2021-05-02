@@ -124,7 +124,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="<?=base_url()?>/assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">PosKu</span>
     </a>
 
     <!-- Sidebar -->
@@ -157,37 +157,58 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="<?=site_url('dashboard')?>" class="nav-link active">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>Dashboard</p>
                 </a>
               </li>
-            </ul>
           </li>
           <li class="nav-header">SALES</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="fa fa-cart-plus"></i>
-              <p>Sales</p>
+              <i class="nav-icon fa fa-cart-plus"></i>
+              <p> Sales</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="fa fa-warehouse"></i>
-              <p>Stock</p>
+              <i class="nav-icon fa fa-file-csv"></i>
+              <p> Reports</p>
             </a>
           </li>
-          <li class="nav-header">MISCELLANEOUS</li>
-          
-          <li class="nav-header">MULTI LEVEL EXAMPLE</li>
-          <?php if($this->session->userdata('level') == 1){ ?>
+          <li class="nav-header">INVENTORY</li>
+            <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-cubes"></i>
+              <p> Products</p>
+            </a>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-warehouse"></i>
+              <p> Stocks</p>
+            </a>
+          </li>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-sitemap"></i>
+              <p> Categories</p>
+            </a>
+          </li>
+          <li class="nav-header">WAREHOUSE</li>
+          <li class="nav-item">
+            <a href="<?=site_url('supplier')?>" class="nav-link">
+              <i class="nav-icon fa fa-truck"></i>
+              <p> Suppliers</p>
+            </a>
+          </li>
+          <?php if($this->fungsi->user_login()->level == 1){ ?>
           <li class="nav-header">USER</li>
           <li class="nav-item">
             <a href="<?=site_url('users')?>" class="nav-link">
-              <i class="fa fa-user"></i>
-              <p>User</p>
+              <i class="nav-icon fa fa-user"></i>
+              <p>Users</p>
             </a>
           </li>
           <?php } ?>
