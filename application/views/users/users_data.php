@@ -44,7 +44,7 @@
                     <?php $no = 1;
                     foreach($row->result() as $key => $data) {?>
                     <tr>
-                        <td><?=$no++;?>.</td>
+                        <td style="width:5%;"><?=$no++;?>.</td>
                         <td><?=$data->username?></td>
                         <td><?=$data->name?></td>
                         <td><?=$data->address?></td>
@@ -52,7 +52,7 @@
                         <td class="text-center" width="160px">
                         <form action="<?=site_url('users/del')?>" method="post">
                             <a href="<?=site_url('users/edit/'. $data->user_id)?>" class="btn btn-primary btn-xs">
-                                <i class="fa fa-pencil"></i> Edit
+                                <i class="fa fa-pencil-alt"></i> Edit
                             </a>
                         <input type="hidden" name="user_id" value="<?=$data->user_id?>">
                             <button onclick="return confirm('Are you sure want to delete this data?')" class="btn btn-danger btn-xs">

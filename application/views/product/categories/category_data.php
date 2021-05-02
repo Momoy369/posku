@@ -2,12 +2,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Suppliers</h1>
+            <h1 class="m-0">Categories</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><i class="nav-icon fas fa-tachometer-alt"></i></a></li>
-              <li class="breadcrumb-item active">Supplier</li>
+              <li class="breadcrumb-item active">Category</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -15,13 +15,13 @@
 </section>
 
 <section class="content-header">
-
+        <?php $this->view('messages')?>
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Suppliers Data</h3>
+                <h3 class="card-title">Categories Data</h3>
 
                 <div class="float-right">
-                    <a href="<?=site_url('supplier/add')?>" class="btn btn-primary btn-flat">
+                    <a href="<?=site_url('categories/add')?>" class="btn btn-primary btn-flat">
                         <i class="fa fa-plus"></i> Create
                     </a>
                 </div>
@@ -34,9 +34,6 @@
                     <tr>
                         <th class="text-center">#</th>
                         <th class="text-center">Name</th>
-                        <th class="text-center">Phone</th>
-                        <th class="text-center">Address</th>
-                        <th class="text-center">Description</th>
                         <th class="text-center">Action</th>
                     </tr>
                 </thead>
@@ -46,14 +43,11 @@
                     <tr>
                         <td style="width:5%;"><?=$no++;?>.</td>
                         <td><?=$data->name?></td>
-                        <td><?=$data->phone?></td>
-                        <td><?=$data->address?></td>
-                        <td><?=$data->description?></td>
                         <td class="text-center" width="160px">
-                            <a href="<?=site_url('supplier/del/'. $data->supplier_id)?>" onclick="return confirm('You sure want to delete this supplier?')" class="btn btn-danger btn-xs">
+                            <a href="<?=site_url('categories/del/'. $data->category_id)?>" onclick="return confirm('You sure want to delete this categories?')" class="btn btn-danger btn-xs">
                                 <i class="fa fa-trash"></i> Delete
                             </a>
-                            <a href="<?=site_url('supplier/edit/'. $data->supplier_id)?>" class="btn btn-success btn-xs">
+                            <a href="<?=site_url('categories/edit/'. $data->category_id)?>" class="btn btn-success btn-xs">
                                 <i class="fa fa-pencil-alt"></i> Edit
                             </a>
                         </td>

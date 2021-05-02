@@ -178,24 +178,40 @@
             </a>
           </li>
           <li class="nav-header">INVENTORY</li>
-            <li class="nav-item">
+            <li class="nav-item menu-close">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-cubes"></i>
               <p> Products</p>
+              <i class="fas fa-angle-left right"></i>
             </a>
+            <ul class="nav nav-treeview">
+            <li class="nav-item">
+            <a href="<?=site_url('categories')?>" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p> Categories</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="<?=site_url('items')?>" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p> Items</p>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a href="<?=site_url('units')?>" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p> Units</p>
+            </a>
+            </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-warehouse"></i>
+              <i class="far fa-circle nav-icon"></i>
               <p> Stocks</p>
             </a>
           </li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-sitemap"></i>
-              <p> Categories</p>
-            </a>
-          </li>
+          
           <li class="nav-header">WAREHOUSE</li>
           <li class="nav-item">
             <a href="<?=site_url('supplier')?>" class="nav-link">
@@ -209,6 +225,12 @@
             <a href="<?=site_url('users')?>" class="nav-link">
               <i class="nav-icon fa fa-user"></i>
               <p>Users</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?=site_url('customer')?>" class="nav-link">
+              <i class="nav-icon fa fa-user-friends"></i>
+              <p> Customers</p>
             </a>
           </li>
           <?php } ?>
