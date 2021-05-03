@@ -198,7 +198,7 @@
             </a>
             </li>
             <li class="nav-item">
-            <a href="<?=site_url('units')?>" class="nav-link">
+            <a href="<?=site_url('unit')?>" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p> Units</p>
             </a>
