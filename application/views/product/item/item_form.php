@@ -30,7 +30,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4">
-                        <form action="<?=site_url('item/process') ?>" method="post">
+                        <?php echo form_open_multipart('item/process') ?>
                             <div class="form-group">
                                 <label>Item Barcode *</label>
                                 <input type="hidden" name="id" value="<?=$row->item_id?>">
@@ -73,6 +73,21 @@
                                 ['class' => 'form-control', 'required'])?>
                         </div>
                     </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Product Image</label>
+                            <input type="file" name="image" class="form-control">
+                        </div>
+                        <?php if($page == 'edit'){
+                                if($row->image != null) { ?>
+                                <div>
+                                <img src="<?=base_url('uploads/product/'.$row->image)?>" style="width:50%"/>
+                                </div>
+                            <?php
+                                }
+                            }?>
+                    </div>
                 </div>
 
                     <div class="col-md-4">
@@ -83,7 +98,7 @@
                                 <i class="fa fa-undo"></i> Reset</button>
                         </div>
                     </div>
-                    </form>
+                    <?php echo form_close() ?>
                 </div>
             </div>
         </div>    

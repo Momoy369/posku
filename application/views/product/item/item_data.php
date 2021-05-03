@@ -39,6 +39,7 @@
                         <th class="text-center">Unit</th>
                         <th class="text-center">Price</th>
                         <th class="text-center">Stock</th>
+                        <th class="text-center">Image</th>
                         <th class="text-center">Action</th>
                     </tr>
                 </thead>
@@ -53,6 +54,11 @@
                         <td><?=$data->unit_name?></td>
                         <td><?=$data->price?></td>
                         <td><?=$data->stock?></td>
+                        <td>
+                            <?php if($data->image != null){?>
+                            <img src="<?=base_url('uploads/product/'.$data->image)?>" style="width: 100px"/>
+                        </td>
+                        <?php }?>
                         <td class="text-center" width="160px">
                             <a href="<?=site_url('item/del/'. $data->item_id)?>" onclick="return confirm('You sure want to delete this item?')" class="btn btn-danger btn-xs">
                                 <i class="fa fa-trash"></i> Delete
