@@ -15,7 +15,7 @@
 </section>
 
 <section class="content-header">
-
+<?php $this->view('messages')?>
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title"><?=ucfirst($page)?> Unit</h3>
