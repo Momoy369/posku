@@ -24,6 +24,8 @@
   <link rel="stylesheet" href="<?=base_url()?>assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="<?=base_url()?>assets/plugins/daterangepicker/daterangepicker.css">
+  <!-- Data Tables -->
+  <link rel="stylesheet" href="<?=base_url()?>assets//plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <!-- summernote -->
   <link rel="stylesheet" href="<?=base_url()?>assets/plugins/summernote/summernote-bs4.min.css">
 </head>
@@ -156,55 +158,55 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
+          <!-- <li class="nav-item"> -->
               <li class="nav-item">
-                <a href="<?=site_url('dashboard')?>" class="nav-link active">
+                <a href="<?=site_url('dashboard')?>" <?=$this->uri->segment(1) == 'dashboard' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"'?>>
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>Dashboard</p>
                 </a>
               </li>
-          </li>
+          <!-- </li> -->
           <li class="nav-header">SALES</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" <?=$this->uri->segment(1) == 'sales' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"'?>>
               <i class="nav-icon fa fa-cart-plus"></i>
               <p> Sales</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" <?=$this->uri->segment(1) == 'reports' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"'?>>
               <i class="nav-icon fa fa-file-csv"></i>
               <p> Reports</p>
             </a>
           </li>
           <li class="nav-header">INVENTORY</li>
             <li class="nav-item menu-close">
-            <a href="#" class="nav-link">
+            <a href="#" <?=$this->uri->segment(1) == 'categories' || $this->uri->segment(1) == 'items' || $this->uri->segment(1) == 'unit' || $this->uri->segment(1) == 'stock' ? 'class="nav-link active"' : 'class="nav-link"'?>>
               <i class="nav-icon fa fa-cubes"></i>
               <p> Products</p>
               <i class="fas fa-angle-left right"></i>
             </a>
             <ul class="nav nav-treeview">
             <li class="nav-item">
-            <a href="<?=site_url('categories')?>" class="nav-link">
+            <a href="<?=site_url('categories')?>" <?=$this->uri->segment(1) == 'categories' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"'?>>
               <i class="far fa-circle nav-icon"></i>
               <p> Categories</p>
             </a>
             </li>
             <li class="nav-item">
-            <a href="<?=site_url('items')?>" class="nav-link">
+            <a href="<?=site_url('items')?>" <?=$this->uri->segment(1) == 'items' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"'?>>
               <i class="far fa-circle nav-icon"></i>
               <p> Items</p>
             </a>
             </li>
             <li class="nav-item">
-            <a href="<?=site_url('unit')?>" class="nav-link">
+            <a href="<?=site_url('unit')?>" <?=$this->uri->segment(1) == 'unit' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"'?>>
               <i class="far fa-circle nav-icon"></i>
               <p> Units</p>
             </a>
             </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="<?=site_url('stock')?>" <?=$this->uri->segment(1) == 'stock' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"'?>>
               <i class="far fa-circle nav-icon"></i>
               <p> Stocks</p>
             </a>
@@ -214,7 +216,7 @@
           
           <li class="nav-header">WAREHOUSE</li>
           <li class="nav-item">
-            <a href="<?=site_url('supplier')?>" class="nav-link">
+            <a href="<?=site_url('supplier')?>" <?=$this->uri->segment(1) == 'supplier' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"'?>>
               <i class="nav-icon fa fa-truck"></i>
               <p> Suppliers</p>
             </a>
@@ -222,13 +224,13 @@
           <?php if($this->fungsi->user_login()->level == 1){ ?>
           <li class="nav-header">USER</li>
           <li class="nav-item">
-            <a href="<?=site_url('users')?>" class="nav-link">
+            <a href="<?=site_url('users')?>" <?=$this->uri->segment(1) == 'users' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"'?>>
               <i class="nav-icon fa fa-user"></i>
               <p>Users</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?=site_url('customer')?>" class="nav-link">
+            <a href="<?=site_url('customer')?>" <?=$this->uri->segment(1) == 'customer' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"'?>>
               <i class="nav-icon fa fa-user-friends"></i>
               <p> Customers</p>
             </a>
@@ -301,5 +303,16 @@
 <script src="<?=base_url()?>/assets/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="<?=base_url()?>/assets/dist/js/pages/dashboard.js"></script>
+
+<script src="<?=base_url()?>/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+
+<script src="<?=base_url()?>/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $('#table1').DataTable()
+  });
+</script>
+
 </body>
 </html>
