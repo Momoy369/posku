@@ -35,6 +35,7 @@ class ComposerStaticInite2de715f1655b2fcc273c82a1020afc6
             'Symfony\\Component\\PropertyInfo\\' => 31,
             'Symfony\\Component\\PropertyAccess\\' => 33,
             'Symfony\\Component\\OptionsResolver\\' => 34,
+            'Svg\\' => 4,
         ),
         'P' => 
         array (
@@ -44,12 +45,17 @@ class ComposerStaticInite2de715f1655b2fcc273c82a1020afc6
         array (
             'MyCLabs\\Enum\\' => 13,
         ),
+        'F' => 
+        array (
+            'FontLib\\' => 8,
+        ),
         'E' => 
         array (
             'Endroid\\QrCode\\' => 15,
         ),
         'D' => 
         array (
+            'Dompdf\\' => 7,
             'DASPRiD\\Enum\\' => 13,
         ),
         'B' => 
@@ -103,6 +109,10 @@ class ComposerStaticInite2de715f1655b2fcc273c82a1020afc6
         array (
             0 => __DIR__ . '/..' . '/symfony/options-resolver',
         ),
+        'Svg\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg',
+        ),
         'Picqer\\Barcode\\' => 
         array (
             0 => __DIR__ . '/..' . '/picqer/php-barcode-generator/src',
@@ -111,9 +121,17 @@ class ComposerStaticInite2de715f1655b2fcc273c82a1020afc6
         array (
             0 => __DIR__ . '/..' . '/myclabs/php-enum/src',
         ),
+        'FontLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phenx/php-font-lib/src/FontLib',
+        ),
         'Endroid\\QrCode\\' => 
         array (
             0 => __DIR__ . '/..' . '/endroid/qr-code/src',
+        ),
+        'Dompdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
         ),
         'DASPRiD\\Enum\\' => 
         array (
@@ -125,9 +143,25 @@ class ComposerStaticInite2de715f1655b2fcc273c82a1020afc6
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'S' => 
+        array (
+            'Sabberworm\\CSS' => 
+            array (
+                0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/lib',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Dompdf\\Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
+        'HTML5_Data' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Data.php',
+        'HTML5_InputStream' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/InputStream.php',
+        'HTML5_Parser' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Parser.php',
+        'HTML5_Tokenizer' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Tokenizer.php',
+        'HTML5_TreeBuilder' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/TreeBuilder.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
@@ -140,6 +174,7 @@ class ComposerStaticInite2de715f1655b2fcc273c82a1020afc6
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInite2de715f1655b2fcc273c82a1020afc6::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInite2de715f1655b2fcc273c82a1020afc6::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInite2de715f1655b2fcc273c82a1020afc6::$prefixesPsr0;
             $loader->classMap = ComposerStaticInite2de715f1655b2fcc273c82a1020afc6::$classMap;
 
         }, null, ClassLoader::class);
