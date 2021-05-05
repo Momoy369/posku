@@ -181,7 +181,7 @@
           </li>
           <li class="nav-header">INVENTORY</li>
             <li class="nav-item menu-close">
-            <a href="#" <?=$this->uri->segment(1) == 'categories' || $this->uri->segment(1) == 'item' || $this->uri->segment(1) == 'unit' || $this->uri->segment(1) == 'stock' ? 'class="nav-link active"' : 'class="nav-link"'?>>
+            <a href="#" <?=$this->uri->segment(1) == 'categories' || $this->uri->segment(1) == 'item' || $this->uri->segment(1) == 'unit' ? 'class="nav-link active"' : 'class="nav-link"'?>>
               <i class="nav-icon fa fa-cubes"></i>
               <p> Products</p>
               <i class="fas fa-angle-left right"></i>
@@ -205,15 +205,32 @@
               <p> Units</p>
             </a>
             </li>
-          <li class="nav-item">
-            <a href="<?=site_url('stock')?>" <?=$this->uri->segment(1) == 'stock' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"'?>>
-              <i class="far fa-circle nav-icon"></i>
-              <p> Stocks</p>
-            </a>
-          </li>
             </ul>
           </li>
-          
+
+          <li class="nav-header">TRANSACTION</li>
+            <li class="nav-item menu-close">
+              <a href="#" <?=$this->uri->segment(1) == 'stock' ? 'class="nav-link active"' : 'class="nav-link"'?>>
+                <i class="nav-icon fa fa-hand-holding-usd"></i>
+                <p> Transaction</p>
+                <i class="fas fa-angle-left right"></i>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="<?=site_url('stock/in')?>" <?=$this->uri->segment(1) == 'stock/in' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"'?>>
+                  <i class="far fa-circle nav-icon"></i>
+                  <p> Stock-In</p>
+                </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?=site_url('stock/out')?>" <?=$this->uri->segment(1) == 'stock/out' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"'?>>
+                    <i class="far fa-circle nav-icon"></i>
+                    <p> Stock-Out</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
           <li class="nav-header">WAREHOUSE</li>
           <li class="nav-item">
             <a href="<?=site_url('supplier')?>" <?=$this->uri->segment(1) == 'supplier' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"'?>>

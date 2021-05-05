@@ -26,7 +26,7 @@ class item extends CI_Controller {
             $row[] = $item->image != null ? '<img src="'.base_url('uploads/product/'.$item->image).'" class="img" style="width: 100px">' : null;
 
             //add html for action
-            $row[] = '<a href="'.site_url('item/edit/'.$item->item_id).'" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Edit</a>
+            $row[] = '<a href="'.site_url('item/edit/'.$item->item_id).'" class="btn btn-primary btn-xs"><i class="fa fa-pencil-alt"></i> Edit</a>
             <a href="'.site_url('item/del'.$item->item_id).'" onclick="return confirm(\'You want to delete this?\')" class="btn btn-danger btn-xs">
             <i class="fa fa-trash"></i> Delete</a>';
             $data[] = $row;
