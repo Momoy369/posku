@@ -124,4 +124,11 @@ Class item_m extends CI_Model{
         $this->db->query($sql);
     }
 
+    function update_stock_out($data){
+        $qty = $data['qty'];
+        $id = $data['item_id'];
+        $sql ="UPDATE p_item SET stock = stock - '$qty' WHERE item_id = '$id'";
+        $this->db->query($sql);
+    }
+
 }
