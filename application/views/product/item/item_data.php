@@ -48,7 +48,12 @@
                     foreach($row->result() as $key => $data) {?>
                     <tr>
                         <td style="width:5%;"><?=$no++;?>.</td>
-                        <td><?=$data->barcode?></td>
+                        <td class="text-center">
+                            <?=$data->barcode?>
+                            <a href="<?=site_url('item/barcode_qrcode/'. $data->item_id)?>" onclick="return confirm('Generate barcode?')" class="btn btn-default btn-xs">
+                                Generate <i class="fa fa-barcode"></i>
+                            </a>
+                        </td>
                         <td><?=$data->name?></td>
                         <td><?=$data->category_name?></td>
                         <td><?=$data->unit_name?></td>

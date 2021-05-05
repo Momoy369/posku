@@ -147,6 +147,13 @@ class item extends CI_Controller {
 	}
 
 	public function del($id){
+
+        $item = $this->item_m->get($id)->row();
+            if($item->image != null){
+                $target_file = './uploads/product/'.$item->image;
+                unlink($target_file);
+            }
+
 		$this->item_m->del($id);
 		if($this->db->affected_rows() > 0){
 			$this->session->set_flashdata('success', 'Data deleted!');
@@ -154,4 +161,9 @@ class item extends CI_Controller {
 		}
 		redirect('item');
 	}
+
+    function barcode_qrcode($id){
+        $data['row'] = $this->item_m->get($id)->row();
+        $this->template->load('template', 'product/item/barcode_qrcode', $data);
+    }
 }
