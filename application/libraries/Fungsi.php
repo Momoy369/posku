@@ -17,7 +17,12 @@ Class Fungsi {
     }
 
     function PdfGenerator($html, $filename, $paper, $orientation){
+        $options = new Dompdf\Options();
+        $options->setDefaultFont('courier');
+        $options->setIsRemoteEnabled(true);
+
         $dompdf = new Dompdf\Dompdf();
+        $dompdf->setOptions($options);
         $dompdf->loadHtml($html);
         $dompdf->setPaper($paper, $orientation);
         $dompdf->render();

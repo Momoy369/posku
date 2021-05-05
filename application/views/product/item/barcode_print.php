@@ -15,18 +15,6 @@
                 <?=$row->barcode?></p>
                 <br><br>
             </div>
-
-            <!-- <div class="card-body">
-            <p class="text-center"><?php
-                $qrCode = new Endroid\QrCode\QrCode($row->barcode);
-                // $qrCode->writeFile('uploads/qrcode/item-'.$row->item_id.'.png');
-                ?>
-            <img src="<?=base_url('uploads/qrcode/item-'.$row->item_id.'.png') ?>">
-            <br>
-            <?=$row->barcode?></p>
-
-            <br><br>
-            </div> -->
             </body>
     </head>
 </html>

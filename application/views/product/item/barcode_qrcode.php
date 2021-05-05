@@ -59,7 +59,7 @@
             <?=$row->barcode?></p>
 
             <br><br>
-            <a href="<?=site_url('item/barcode_print/'.$row->item_id)?>" target="_blank" class="btn btn-default btn-xs">
+            <a href="<?=site_url('item/qrcode_print/'.$row->item_id)?>" target="_blank" class="btn btn-default btn-xs">
                 <i class="fa fa-print"></i> Print
             </a>
             </div>
