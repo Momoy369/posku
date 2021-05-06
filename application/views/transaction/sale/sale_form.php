@@ -40,13 +40,21 @@
                                 </div>
                             </td>
                         </tr>
-                        <td>
-                            <div>
-                                <select id="customer" class="form-control">
-                                    <option value="">General</option>
-                                </select>
-                            </div>
+                        <tr>
+                        <td style="vertical-align:top">
+                                <label for="customer">Customer</label>
                         </td>
+                            <td>
+                                <div>
+                                    <select id="customer" class="form-control">
+                                        <option value="">General</option>
+                                        <?php foreach($customer as $cust =>$value) {
+                                            echo '<option value="'.$value->customer_id.'">'.$value->name. '</option>';
+                                        }?>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
                     </table>
                 </div>
             </div>
@@ -103,7 +111,7 @@
             <div class="card card-widget">
                 <div class="card-body">
                     <div align="right">
-                        <h4>Invoice <b><span id="invoice">MP9263647</span></b></h4>
+                        <h4>Invoice <b><span id="invoice"><?=$invoice?></span></b></h4>
                         <h1><b><span id="grand_total2" style="font-size:50pt"> 0</span> </b></h1>
                     </div>
                 </div>
