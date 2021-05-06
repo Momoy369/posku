@@ -50,9 +50,11 @@
                         <td><?=$data->address?></td>
                         <td><?=$data->description?></td>
                         <td class="text-center" width="160px">
-                            <a href="<?=site_url('supplier/del/'. $data->supplier_id)?>" onclick="return confirm('You sure want to delete this supplier?')" class="btn btn-danger btn-xs">
+                            
+                            <a href="#modalDelete" data-toggle="modal" onclick="$('#modalDelete #formDelete').attr('action', '<?=site_url('supplier/del/'. $data->supplier_id)?>')" class="btn btn-danger btn-xs">
                                 <i class="fa fa-trash"></i> Delete
                             </a>
+
                             <a href="<?=site_url('supplier/edit/'. $data->supplier_id)?>" class="btn btn-success btn-xs">
                                 <i class="fa fa-pencil-alt"></i> Edit
                             </a>
@@ -65,3 +67,22 @@
             </div>
         </div>
 </section>
+
+<div class="modal fade" id="modalDelete">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">You want to delete it?</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <spn aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <form id="formDelete" action="" method="post">
+                    <button class="btn btn-default" data-dismiss="modal">No</button>
+                    <button class="btn btn-danger" type="submit">Yes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

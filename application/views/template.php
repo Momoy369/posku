@@ -29,7 +29,7 @@
   <!-- summernote -->
   <link rel="stylesheet" href="<?=base_url()?>assets/plugins/summernote/summernote-bs4.min.css">
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed <?=$this->uri->segment('1') == 'sale' ? 'sidebar-collapse' : null ?>">
 <div class="wrapper">
 
   <!-- Preloader -->
@@ -167,12 +167,7 @@
               </li>
           <!-- </li> -->
           <li class="nav-header">SALES</li>
-          <li class="nav-item">
-            <a href="#" <?=$this->uri->segment(1) == 'sales' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"'?>>
-              <i class="nav-icon fa fa-cart-plus"></i>
-              <p> Sales</p>
-            </a>
-          </li>
+          
           <li class="nav-item">
             <a href="#" <?=$this->uri->segment(1) == 'reports' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"'?>>
               <i class="nav-icon fa fa-file-csv"></i>
@@ -210,12 +205,18 @@
 
           <li class="nav-header">TRANSACTION</li>
             <li class="nav-item menu-close">
-              <a href="#" <?=$this->uri->segment(1) == 'stock' ? 'class="nav-link active"' : 'class="nav-link"'?>>
+              <a href="#" <?=$this->uri->segment(1) == 'stock' || $this->uri->segment(1) == 'sale' ? 'class="nav-link active"' : 'class="nav-link"'?>>
                 <i class="nav-icon fa fa-hand-holding-usd"></i>
                 <p> Transaction</p>
                 <i class="fas fa-angle-left right"></i>
               </a>
               <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?=site_url('sale')?>" <?=$this->uri->segment(1) == 'sale' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"'?>>
+                  <i class="far fa-circle nav-icon"></i>
+                  <p> Sales</p>
+                </a>
+                </li>
                 <li class="nav-item">
                 <a href="<?=site_url('stock/in')?>" <?=$this->uri->segment(1) == 'stock/in' || $this->uri->segment(1) == '' ? 'class="nav-link active"' : 'class="nav-link"'?>>
                   <i class="far fa-circle nav-icon"></i>
